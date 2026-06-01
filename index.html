@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>我是獅子王 - 歡迎光臨榮耀國</title>
+    <style>
+        :root {
+            --primary-color: #ff9500; /* iOS 橘色 */
+            --text-main: #1d1d1f;
+            --text-secondary: #86868b;
+            --glass-bg: rgba(255, 255, 255, 0.65);
+            --glass-border: rgba(255, 255, 255, 0.5);
+        }
+
+        body {
+            /* 使用蘋果原生的系統字體 */
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-main);
+            /* iOS 風格的動態漸層背景 (融入獅子王的暖色調) */
+            background-color: #f2f2f7;
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(35, 100%, 80%, 1) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, hsla(25, 100%, 75%, 1) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, hsla(15, 100%, 80%, 1) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, hsla(45, 100%, 75%, 1) 0px, transparent 50%);
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* 頂部懸浮導覽列 (類似動態島或分頁標籤) */
+        nav {
+            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 999px;
+            padding: 5px;
+            display: flex;
+            gap: 5px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+            z-index: 100;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 600;
+            font-size: 15px;
+            padding: 10px 24px;
+            border-radius: 999px;
+            transition: all 0.3s ease;
+        }
+
+        nav a.active {
+            background: white;
+            color: var(--text-main);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        /* 毛玻璃卡片主體 */
+        main {
+            width: 90%;
+            max-width: 600px;
+            margin: 40px auto;
+            background: var(--glass-bg);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border: 1px solid var(--glass-border);
+            border-radius: 32px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 17px;
+            margin-top: 0;
+            margin-bottom: 30px;
+        }
+
+        /* 圖片樣式：iOS 平滑圓角 (Squircle) */
+        .king-photo {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 40px;
+            margin: 0 auto 24px;
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+            display: block;
+        }
+
+        p {
+            font-size: 17px;
+            line-height: 1.5;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        /* Widget 風格的宣傳區 */
+        .widget-promotion {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 24px;
+            padding: 24px;
+            margin-top: 40px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            text-align: left;
+        }
+
+        .widget-promotion h2 {
+            font-size: 20px;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 16px 0;
+        }
+
+        .tag {
+            background: rgba(255, 149, 0, 0.15);
+            color: #d07900;
+            padding: 6px 12px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 14px 24px;
+            border-radius: 999px;
+            font-size: 16px;
+            font-weight: 600;
+            width: 100%;
+            cursor: pointer;
+            transition: transform 0.2s, filter 0.2s;
+        }
+
+        .btn-primary:active {
+            transform: scale(0.97);
+            filter: brightness(0.9);
+        }
+
+        /* 隱藏原生播放器，僅保留背景播放 */
+        audio {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="active">關於我</a>
+        <a href="member.html">家族成員</a>
+    </nav>
+
+    <main>
+        <!-- 請將這裡的 src 替換為你的獅子王照片檔案 -->
+        <img src="simba.png" alt="獅子王辛巴" class="king-photo">
+        
+        <h1>我是獅子王，辛巴</h1>
+        <p class="subtitle">歡迎光臨榮耀國</p>
+
+        <p>經過重重考驗，我重新奪回了屬於我的王位，並在愛與勇氣的指引下，帶領我的臣民們過著和平與繁榮的生活。</p>
+        <p>雖然生命之環不斷循環，但我的精神將永遠守護著這片土地。希望在這個網頁上，你能感受到榮耀國的神聖與壯麗。</p>
+
+        <!-- Widget 宣傳區 -->
+        <div class="widget-promotion">
+            <h2>📢 王室宣傳</h2>
+            <p style="color: var(--text-secondary); font-size: 15px;">分享榮耀國的故事，讓更多人感受勇氣的力量！</p>
+            <div class="tags">
+                <span class="tag">#獅子王</span>
+                <span class="tag">#辛巴</span>
+                <span class="tag">#榮耀國</span>
+                <span class="tag">#生命之環</span>
+            </div>
+            <button class="btn-primary">分享至王室公告</button>
+        </div>
+    </main>
+
+    <!-- 背景音樂 -->
+    <audio autoplay loop id="bg-music">
+        <source src="bgm.mp3" type="audio/mpeg">
+    </audio>
+
+</body>
+</html>

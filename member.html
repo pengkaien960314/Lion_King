@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>家族成員 - 獅子王</title>
+    <style>
+        :root {
+            --primary-color: #ff9500;
+            --text-main: #1d1d1f;
+            --text-secondary: #86868b;
+            --glass-bg: rgba(255, 255, 255, 0.65);
+            --glass-border: rgba(255, 255, 255, 0.5);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-main);
+            background-color: #f2f2f7;
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(35, 100%, 80%, 1) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, hsla(25, 100%, 75%, 1) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, hsla(15, 100%, 80%, 1) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, hsla(45, 100%, 75%, 1) 0px, transparent 50%);
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        nav {
+            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 999px;
+            padding: 5px;
+            display: flex;
+            gap: 5px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+            z-index: 100;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 600;
+            font-size: 15px;
+            padding: 10px 24px;
+            border-radius: 999px;
+            transition: all 0.3s ease;
+        }
+
+        nav a.active {
+            background: white;
+            color: var(--text-main);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        main {
+            width: 90%;
+            max-width: 800px;
+            margin: 40px auto;
+            text-align: center;
+        }
+
+        .header-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .header-desc {
+            color: var(--text-secondary);
+            font-size: 17px;
+            margin-bottom: 40px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 0 10px;
+        }
+
+        .widget-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border: 1px solid var(--glass-border);
+            border-radius: 28px;
+            padding: 24px;
+            text-align: left;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            transition: transform 0.3s ease;
+        }
+
+        .widget-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .member-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 12px;
+        }
+
+        /* 替換為真實照片的樣式 */
+        .member-photo {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px; /* 蘋果風格圓角矩形 */
+            object-fit: cover; /* 確保照片填滿且不變形 */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            background-color: #e5e5ea; /* 照片尚未載入時的底色 */
+        }
+
+        .member-info h3 {
+            margin: 0;
+            font-size: 19px;
+            font-weight: 600;
+        }
+
+        .member-info span {
+            font-size: 14px;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        .widget-card p {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        audio {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">關於我</a>
+        <a href="member.html" class="active">家族成員</a>
+    </nav>
+
+    <main>
+        <h1 class="header-title">皇室成員</h1>
+        <p class="header-desc">榮耀國歷史上最重要的家人與夥伴</p>
+
+        <div class="grid-container">
+            <div class="widget-card">
+                <div class="member-header">
+                    <img src="mufasa.png" alt="木法沙" class="member-photo">
+                    <div class="member-info">
+                        <h3>木法沙 (Mufasa)</h3>
+                        <span>先王 / 父親</span>
+                    </div>
+                </div>
+                <p>偉大的前任國王，睿智且英勇。他的智慧化作繁星，永遠指引著榮耀國。</p>
+            </div>
+
+            <div class="widget-card">
+                <div class="member-header">
+                    <img src="sarabi.png" alt="沙拉碧" class="member-photo">
+                    <div class="member-info">
+                        <h3>沙拉碧 (Sarabi)</h3>
+                        <span>前任王后 / 母親</span>
+                    </div>
+                </div>
+                <p>高貴且堅強的王后，在最黑暗的時期依然保持著皇室的尊嚴與力量。</p>
+            </div>
+
+            <div class="widget-card">
+                <div class="member-header">
+                    <img src="nala.png" alt="娜娜" class="member-photo">
+                    <div class="member-info">
+                        <h3>娜娜 (Nala)</h3>
+                        <span>現任王后 / 妻子</span>
+                    </div>
+                </div>
+                <p>勇敢無畏的母獅，辛巴的青梅竹馬，是支撐他奪回王位最強大的後盾。</p>
+            </div>
+
+            <div class="widget-card">
+                <div class="member-header">
+                    <img src="kiara.png" alt="琪拉雅" class="member-photo">
+                    <div class="member-info">
+                        <h3>琪拉雅 (Kiara)</h3>
+                        <span>公主 / 女兒</span>
+                    </div>
+                </div>
+                <p>獨立且充滿好奇心的公主，用愛與包容化解了兩大家族長久以來的仇恨。</p>
+            </div>
+        </div>
+    </main>
+
+    <audio autoplay loop id="bg-music">
+        <source src="bgm.mp3" type="audio/mpeg">
+    </audio>
+
+</body>
+</html>

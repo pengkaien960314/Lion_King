@@ -188,6 +188,7 @@
         <p>雖然生命之環不斷循環，但我的精神將永遠守護著這片土地。希望在這個網頁上，你能感受到榮耀國的神聖與壯麗。</p>
 
         <!-- Widget 宣傳區 -->
+        <button id="music-btn" class="btn-primary" style="margin-top: 20px; background-color: #34c759;">🎵 播放背景音樂</button>
         <div class="widget-promotion">
             <h2>📢 王室宣傳</h2>
             <p style="color: var(--text-secondary); font-size: 15px;">分享榮耀國的故事，讓更多人感受勇氣的力量！</p>
@@ -202,9 +203,27 @@
     </main>
 
     <!-- 背景音樂 -->
-    <audio autoplay loop id="bg-music">
+    <audio id="bg-music" loop>
         <source src="bgm.mp3" type="audio/mpeg">
     </audio>
+    <script>
+        const musicBtn = document.getElementById('music-btn');
+        const bgMusic = document.getElementById('bg-music');
+        let isPlaying = false;
+
+        musicBtn.addEventListener('click', () => {
+            if (isPlaying) {
+                bgMusic.pause();
+                musicBtn.innerText = '🎵 播放背景音樂';
+                musicBtn.style.backgroundColor = '#34c759'; // iOS 綠色
+            } else {
+                bgMusic.play();
+                musicBtn.innerText = '⏸️ 暫停背景音樂';
+                musicBtn.style.backgroundColor = '#ff3b30'; // iOS 紅色
+            }
+            isPlaying = !isPlaying;
+        });
+    </script>
 
 </body>
 </html>
